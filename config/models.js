@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  // connection: 'localDiskDb',
+   connection: 'localMysqlServer',
 
   /***************************************************************************
   *                                                                          *
@@ -27,6 +27,8 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter'
-
+  migrate: 'alter'
+  /*
+  Alter and drop settings will tell Sails to automatically create a database with tables in it. While safe means database creation is the developer's responsibility so Sails will not create them. In a production environment, safe is set to default by Sails.
+  */
 };
