@@ -29,10 +29,14 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
     <!--STYLES END-->
   </head>
 
   <body>
+    <%- partial('./partials/header.ejs') %>
+    
     <%- body %>
 
 
@@ -59,6 +63,7 @@
     -->
 
     <!--TEMPLATES-->
+    
     <!--TEMPLATES END-->
 
 
@@ -86,6 +91,8 @@
     -->
 
     <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

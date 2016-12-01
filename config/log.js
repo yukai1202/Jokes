@@ -16,7 +16,7 @@ var customLogger = new winston.Logger({
   transports:[
     new (winston.transports.File)({
       level: 'info',
-      filename: './logs/joke.log'
+      filename: 'joke.log'
     })
   ]
 });
@@ -37,5 +37,5 @@ module.exports.log = {
 
   //level: 'info'
   colors: false,
-  custom： customLogger
+  custom: customLogger
 };
