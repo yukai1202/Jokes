@@ -1,5 +1,7 @@
+@header-bg: #6090ff;
+@header-nav-bg: #222;
 .header{
-	background: #6090ff;
+	background: @header-bg;
 	border-bottom: 1px solid #2d78f4;
     height: 107px;
 
@@ -10,7 +12,28 @@
 
     .nav{
     	height: 40px;
-    	background-color:#222;
+    	background-color:@header-nav-bg;
     	width: 100%;
+        color: #fafafa;
+        .menus{
+            width: 1000px;
+            height: 100%;
+            margin:0 auto;
+
+            ul{
+                width: 100%;
+
+                > li{
+                    float: left;
+                    width: 112px;
+                    line-height: 40px;
+                    text-align: center;
+                }
+
+                > li.active{
+                    background-color: @header-bg;
+                }
+            }
+        }
     }
 }
