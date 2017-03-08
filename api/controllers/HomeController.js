@@ -7,9 +7,12 @@
 
 module.exports = {
 	index: function (req, res) {
-	    return res.json({
-	      todo: 'Not implemented yet!'
-	    });
+	     
+		res.view('homepage',{title: "text", type: "1"});
+	},
+
+	img: function(req, res){
+		res.view('homepage', {title: "img", type: "2"});
 	}
 };
 
