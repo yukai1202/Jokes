@@ -1,0 +1,17 @@
+/* ----------------------------------------------------
+   created with http://www.texturepacker.com 
+   ----------------------------------------------------
+   $TexturePacker:SmartUpdate:512cd541a77fa9ac271e6dfaf502267b$
+   ----------------------------------------------------
+
+   usage: <span class="{-spritename-} sprite"></span>
+
+   replace {-spritename-} with the sprite you like to use
+
+*/
+
+.sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(icon.png);}
+
+.feedback {width:27px; height:23px; background-position: -2px -2px}
+.login {width:24px; height:24px; background-position: -2px -27px}
+.publish {width:26px; height:23px; background-position: -31px -2px}

@@ -3,12 +3,18 @@
   	<div class="nav">
   		<div class="menus">
   			<ul>
-  				<li class="active">
-  					<a href="#">test1</a>
+  				<li  <%if(type == 1){%> class="active" <%}%> >
+  					<a href="/">笑话</a>
   				</li>
-  				<li>
-  					<a href="#">test2</a>
+  				<li <%if(type == 2){%> class="active" <%}%>>
+  					<a href="/img/1">图片</a>
   				</li>
+          <li class="right"><a href="#">反馈</a></li>
+          <li class="right"><a href="#">登录</a></li>
+          <li class="right"><a href="#">投稿</a></li>
+          
+          
+
   			</ul>
   		</div>
   	</div>

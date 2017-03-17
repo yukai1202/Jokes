@@ -36,6 +36,6 @@ module.exports.log = {
   ***************************************************************************/
 
   //level: 'info'
-  colors: false,
-  custom: customLogger
+  //colors: false,
+  //custom: customLogger
 };

@@ -32,6 +32,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'get /': {
+    controller: 'HomeController',
+    action: 'index'
+  },
   'get /:page': {
     controller: 'HomeController',
     action: 'index' 

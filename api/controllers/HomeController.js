@@ -7,7 +7,10 @@
 
 module.exports = {
 	index: function (req, res) {
-	     
+	    
+
+		var currentpage = req.param("page");
+		//console.log("currentpage:"+currentpage);
 		res.view('homepage',{title: "text", type: "1"});
 	},
 
