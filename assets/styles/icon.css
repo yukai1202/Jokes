@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
    created with http://www.texturepacker.com 
    ----------------------------------------------------
-   $TexturePacker:SmartUpdate:512cd541a77fa9ac271e6dfaf502267b$
+   $TexturePacker:SmartUpdate:374d9ea8f8b5c00117fe0222cf2f6109$
    ----------------------------------------------------
 
    usage: <span class="{-spritename-} sprite"></span>
@@ -12,6 +12,13 @@
 
 .sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(icon.png);}
 
-.feedback {width:27px; height:23px; background-position: -2px -2px}
-.login {width:24px; height:24px; background-position: -2px -27px}
-.publish {width:26px; height:23px; background-position: -31px -2px}
+.down {width:18px; height:18px; background-position: -42px -42px}
+.down-h {width:18px; height:18px; background-position: -2px -62px}
+.msg {width:18px; height:18px; background-position: -2px -42px}
+.msg-h {width:18px; height:18px; background-position: -22px -42px}
+.share {width:18px; height:18px; background-position: -22px -22px}
+.share-h {width:18px; height:18px; background-position: -42px -22px}
+.star {width:18px; height:18px; background-position: -42px -2px}
+.star-h {width:18px; height:18px; background-position: -2px -22px}
+.up {width:18px; height:18px; background-position: -2px -2px}
+.up-h {width:18px; height:18px; background-position: -22px -2px}
