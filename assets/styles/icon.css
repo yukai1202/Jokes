@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
    created with http://www.texturepacker.com 
    ----------------------------------------------------
-   $TexturePacker:SmartUpdate:374d9ea8f8b5c00117fe0222cf2f6109$
+   $TexturePacker:SmartUpdate:bf5dba96cc027b8a1494493b373cac56$
    ----------------------------------------------------
 
    usage: <span class="{-spritename-} sprite"></span>
@@ -12,13 +12,15 @@
 
 .sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(icon.png);}
 
-.down {width:18px; height:18px; background-position: -42px -42px}
-.down-h {width:18px; height:18px; background-position: -2px -62px}
-.msg {width:18px; height:18px; background-position: -2px -42px}
-.msg-h {width:18px; height:18px; background-position: -22px -42px}
-.share {width:18px; height:18px; background-position: -22px -22px}
-.share-h {width:18px; height:18px; background-position: -42px -22px}
-.star {width:18px; height:18px; background-position: -42px -2px}
-.star-h {width:18px; height:18px; background-position: -2px -22px}
-.up {width:18px; height:18px; background-position: -2px -2px}
-.up-h {width:18px; height:18px; background-position: -22px -2px}
+.circle {width:34px; height:34px; background-position: -2px -2px}
+.circle-h {width:34px; height:34px; background-position: -2px -38px}
+.down {width:18px; height:18px; background-position: -22px -102px}
+.down-h {width:18px; height:18px; background-position: -42px -102px}
+.msg {width:18px; height:18px; background-position: -22px -82px}
+.msg-h {width:18px; height:18px; background-position: -42px -82px}
+.share {width:18px; height:18px; background-position: -2px -74px}
+.share-h {width:18px; height:18px; background-position: -2px -94px}
+.star {width:18px; height:18px; background-position: -38px -42px}
+.star-h {width:18px; height:18px; background-position: -38px -62px}
+.up {width:18px; height:18px; background-position: -38px -2px}
+.up-h {width:18px; height:18px; background-position: -38px -22px}
