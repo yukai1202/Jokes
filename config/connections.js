@@ -48,6 +48,14 @@ module.exports.connections = {
     database: 'englishjoke' //optional
   },
 
+  localTestServer: {
+    adapter: 'sails-mysql',
+    host: '127.0.0.1',
+    user: 'root', //optional
+    password: 'yk8641254', //optional
+    database: 'sails' //optional
+  },
+
   productionMysqlServer: {
     adapter: 'sails-mysql',
     host: '127.0.0.1',

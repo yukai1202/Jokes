@@ -38,12 +38,12 @@ module.exports.routes = {
   },
   'get /:page': {
     controller: 'HomeController',
-    action: 'index' 
+    action: 'text' 
   },
   'get /img/:page': {
     controller: 'HomeController',
     action: 'img' 
-  },
+  }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
