@@ -34,11 +34,11 @@ module.exports = {
         	type: 'integer'
         },
 
-        userId: {
-        	model: 'user'
+        user: {
+        	model: 'User'
         },
-        articleId:{
-        	model: 'article'
+        article:{
+        	model: 'Article'
         }
 	}
 }

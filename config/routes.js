@@ -32,17 +32,22 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /': {
+  
+   
+  'get /img/:page?': {
     controller: 'HomeController',
-    action: 'index'
+    action: 'img'
   },
   'get /:page': {
     controller: 'HomeController',
-    action: 'text' 
+    action: 'text',
+    skipAssets:true
   },
-  'get /img/:page': {
+
+  'get /':{
     controller: 'HomeController',
-    action: 'img' 
+    action: 'index',
+    skipAssets:true
   }
   /***************************************************************************
   *                                                                          *

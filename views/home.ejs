@@ -1,3 +1,4 @@
+<%- partial('./partials/header.ejs') %>
 <div class="normal-width outer-wrapper">
 	<div class="maincontent-wrapper left">
 		<div class="content">
@@ -19,11 +20,7 @@
 						<div class="item-content-wrapper">
 							<p>不知道各位段友们有没有觉得段子已经不是原来带给我们各种快乐的段子了。现在的段子动不动就是什么考智商的，找亮点的，相亲的，耍朋友的。在这里我请你们这种辣鸡滚出段子。你要考智商去最强大脑啊，你要找亮点，去玩（找你妹啊），你要相亲找男朋友去非诚勿扰啊。请你们可以不就可以别来祸害我们段子，段子是给我们快乐的地方。我知道可能会有人喷我，但我不介意，我相信会有很多段友支持我。
 							</p>
-							<p>
-								<% data.forEach(function(tag){%>
-									<span><%=tag.tagName%></span>
-								<%})%>
-							</p>
+ 
 						</div>
 
 						<div class="item-footer">
@@ -115,7 +112,7 @@
 			</ul>
 
 
-			<div class="pagination" id="pagination">
+			<%/*<div class="pagination" id="pagination">
 				<a href="#" class="page-prev sprite" alt="上一页" title="上一页"></a>
 				<a href="#" class="current sprite circle">1</a>
 				<a href="#" class="sprite circle">2</a>
@@ -128,9 +125,35 @@
 				<a href="#" class="sprite circle">9</a>
 				<a href="#" class="sprite circle">10</a>
 				<a href="#" class="page-prev sprite" alt="上一页" title="上一页"></a>
-			</div>
+			</div>*/%>
 
-
+			<% if (pageCount > 1) { %>
+		        <div class="pagination" id="pagination">
+		            
+		            <% var i = 1, par=4, showPageNum = 10;
+		            if (currentPage > 5) {
+		                i = currentPage - 5;
+		                if(i+9>pageCount){
+		                	i = pageCount-9;
+		                }
+		            } else {
+		            	par = showPageNum-currentPage;
+		            } %>
+		           
+		            <% for (i; i<=pageCount; i++) { %>
+		                <% if (currentPage == i) { %>
+		                    <a href="javascript:void(0)" class="current sprite circle"><span><%= i %></span></a>
+		                <% } else { %>
+		                    <a href="/<%= i %>" class="sprite circle"><%= i %></a>
+		                <% } %>
+		                <% if (i == (currentPage + par)) { break; }%>
+ 
+		            <% } %>
+		     
+		            <a href="#" class="page-prev sprite" alt="上一页" title="上一页"></a>
+		        </div>
+		    <% } %>
+		
 		</div>
 	</div>
 	<div class="minor-wrapper right">111</div>

@@ -41,19 +41,19 @@ module.exports = {
 
         articles: {
         	collection: 'article',
-        	via: 'userId'
+        	via: 'user'
         },
         comments: {
             collection: 'comment',
-            via: 'userId'
+            via: 'user'
         },
         favourites: {
             collection: 'favourite',
-            via: 'userId'
+            via: 'user'
         },
         votes: {
             collection: 'vote',
-            via: 'userId'
+            via: 'user'
         }
     }
 };

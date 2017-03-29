@@ -124,13 +124,19 @@
 		    font-size: 16px;
 		    vertical-align: top;
 
-		    &:hover{
+		    &:hover,&.current{
 		    	background-position: -2px -38px;
 		    	color:#fff;
+
 		    	.circle{
 
 		    	}
 		    }
+
+		    &.current{
+		    	cursor: default;
+		    }
+
 		}
     }
 }

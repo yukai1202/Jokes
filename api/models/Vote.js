@@ -9,11 +9,11 @@ module.exports = {
         	enum: [0,1]
         },
 
-        articleId: {
-            model: 'article'
+        article: {
+            model: 'Article'
         },
-        userId: {
-            model: 'user'
+        user: {
+            model: 'User'
         }
 	}
 }

@@ -15,7 +15,7 @@ module.exports = {
 
         articleTags: {
             collection: 'ArticleTag',
-            via: 'tagId'
+            via: 'tag'
         }
 	}
 }

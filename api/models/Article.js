@@ -4,7 +4,8 @@
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
-
+var datetime = require('node-datetime');
+var Constant = require('../common/Constant');
 module.exports = {
 
     attributes: {
@@ -32,9 +33,9 @@ module.exports = {
             size: 10
         },
         pubDateTime: {
-            type: 'datetime',
+            type: 'string',
             defaultsTo: function(){
-                return new Date();
+                return datetime.create(Date.now()).format('Y-m-d H:M:S').toString();
             }
         },
         validated: {
@@ -51,25 +52,56 @@ module.exports = {
             type: 'string'
         },
 
+        width:{
+            type: 'integer'
+        },
+        height:{
+            type: 'integer'
+        },
         source: {
             type: 'string'
         },
 
-        userId: {
-            model: 'user'
+        user: {
+            model: 'User'
         },
 
         articleTags: {
             collection: 'ArticleTag',
-            via: 'articleId'
+            via: 'article'
         },
         comments: {
             collection: 'comment',
-            via: 'articleId'
+            via: 'article'
         },
         favourites: {
             collection: 'favourite',
-            via: 'articleId'
+            via: 'article'
+        },
+
+        votes: {
+            collection: 'vote',
+            via: 'article'
+        },
+
+        getCommentsCount: function(){
+            return this.comments.length;
+        },
+
+        getFavouritesCount: function(){
+            return this.favourites.length;
+        },
+
+        getVotesUpCount: function(){
+            return this.votes.filter(function(v){
+                return v.voteStatus == Constant.VOTE_UP_STATUS;
+            }).length;
+        },
+
+        GetVotesDownCount: function(){
+            return this.votes.filter(function(v){
+                return v.voteStatus == Constant.VOTE_DOWN_STATUS;
+            }).length;
         }
     }
 };

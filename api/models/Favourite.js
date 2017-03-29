@@ -1,10 +1,10 @@
 module.exports = {
 	attributes:{
-        articleId: {
-            model: 'article'
+        article: {
+            model: 'Article'
         },
-        userId: {
-            model: 'user'
+        user: {
+            model: 'User'
         }
 	}
 }

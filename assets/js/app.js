@@ -2,13 +2,14 @@ $(function() {
     echo.init({
         unload: false,
         callback: function(element, op) {
-            console.log(element, 'has been', op + 'ed');
+            //console.log(element, 'has been', op + 'ed');
             //<img src="img/blank.gif" alt="" data-echo="img/album-1.jpg">
         }
     });
 });
 
 
+/*初始化lazy load*/
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(function() {
