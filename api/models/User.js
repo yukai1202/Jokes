@@ -1,59 +1,45 @@
-/**
- * User.js
- *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
- */
-
 module.exports = {
+  attributes: {
+    userName: {
+      type: Sequelize.STRING(40),
+      unique: true
+    },
+    password:{
+      type: Sequelize.STRING(40)
+    },
+    alias:{
+      type: Sequelize.STRING(40),
+      unique: true
+    },
+    avatar:{
+      type: Sequelize.STRING
+    },
+    email:{
+      type: Sequelize.STRING
+    },
+    phoneNumber:{
+      type: Sequelize.STRING,
+      defaultValue:''
+    },
 
-    attributes: {
-        id: {
-            type: 'integer',
-            autoIncrement: true,
-            unique: true,
-            primaryKey: true,
-            required: true
-        },
-        userName:{
-        	type: 'string',
-        	size: 40
-        },
-        password:{
-        	type: 'string',
-        	size: 40
-        },
-        alias: {
-        	type: 'string',
-        	size: 40
-        },
-        avatar:{
-        	type: 'string'
-        },
-        email: {
-        	type: 'string',
-        	size: 40
-        },
-        phoneNumber: {
-        	type: 'string',
-        	defaultsTo: ''
-        },
+    openId:{
+      type: Sequelize.STRING
+    },
 
-        articles: {
-        	collection: 'article',
-        	via: 'user'
-        },
-        comments: {
-            collection: 'comment',
-            via: 'user'
-        },
-        favourites: {
-            collection: 'favourite',
-            via: 'user'
-        },
-        votes: {
-            collection: 'vote',
-            via: 'user'
-        }
+    source:{
+      type:Sequelize.STRING
     }
+  },
+  associations: function() {
+    User.hasMany(Article, {as: 'articles'});
+    User.hasMany(Comment, {as: 'comments'});
+    User.hasMany(Favourite, {as: 'favourites'});
+    User.hasMany(Vote, {as: 'votes'});
+  },
+  options: {
+      freezeTableName: true,
+      classMethods: {},
+      instanceMethods: {},
+      hooks: {}
+  }
 };

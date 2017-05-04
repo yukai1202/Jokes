@@ -6,11 +6,20 @@ $(function() {
             //<img src="img/blank.gif" alt="" data-echo="img/album-1.jpg">
         }
     });
+
+
+    // start 关闭对话框事件
+    $(".pop-header .close").click(function(){
+
+        jokeAlert.close();
+    });
+    // end 关闭对话框事件
 });
 
 
 /*初始化lazy load*/
 (function(root, factory) {
+    "use strict";
     if (typeof define === 'function' && define.amd) {
         define(function() {
             return factory(root);
@@ -149,3 +158,91 @@ $(function() {
     return echo;
 
 });
+
+
+/*my dialog*/
+
+(function() {
+    "use strict";
+    var TRANSITION_FALLBACK_DURATION = 500;
+    var hideElement = function(el) {
+
+        if (!el) {
+            return;
+        }
+
+        var removeThis = function() {
+            if (el && el.parentNode) {
+                el.parentNode.removeChild(el);
+            }
+        };
+
+        el.classList.remove("show");
+        el.classList.add("hide");
+        el.addEventListener("transitionend", removeThis);
+
+        // Fallback for no transitions.
+        setTimeout(removeThis, TRANSITION_FALLBACK_DURATION);
+
+    };
+
+    function JokeAlert() {
+
+        var _jokeAlert = {
+            dialog: function(message, type, onOkay, onCancel) {
+                
+                return;
+            },
+
+            show: function(){
+                $(".alert").removeClass("hide");
+            },
+
+            hide: function(){
+                $(".alert").addClass("hide");
+
+            },
+
+            close: function(){
+                this.hide();
+            }
+        }
+
+        return {
+
+            alert: function(message, onOkay, onCancel) {
+                return _jokeAlert.dialog(message, "alert", onOkay, onCancel) || this;
+            },
+
+            show: function(){
+                return _jokeAlert.show();
+            },
+            hide: function(){
+                return _jokeAlert.hide();
+            },
+
+            close: function(){
+                return _jokeAlert.close();
+            }
+        };
+    }
+
+
+    if ("undefined" !== typeof module && !! module && !! module.exports) {
+        // Preserve backwards compatibility
+        module.exports = function() {
+            return new JokeAlert();
+        };
+        var obj = new JokeAlert();
+        for (var key in obj) {
+            module.exports[key] = obj[key];
+        }
+    } else if (typeof define === "function" && define.amd) {
+        define(function() {
+            return new JokeAlert();
+        });
+    } else {
+        window.jokeAlert = new JokeAlert();
+    }
+
+})();

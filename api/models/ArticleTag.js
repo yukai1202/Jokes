@@ -1,10 +1,15 @@
 module.exports = {
-	attributes:{
-        article: {
-            model: 'Article'
-        },
-        tag: {
-            model: 'Tag'
-        }
-	}
+    attributes: {
+        
+    },
+    associations: function() {
+        ArticleTag.belongsTo(Article);
+        ArticleTag.belongsTo(Tag);
+    },
+    options: {
+        freezeTableName: true,
+        classMethods: {},
+        instanceMethods: {},
+        hooks: {}
+    }
 }

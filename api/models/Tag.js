@@ -1,21 +1,16 @@
 module.exports = {
-	attributes:{
-		id: {
-            type: 'integer',
-            autoIncrement: true,
-            unique: true,
-            primaryKey: true,
-            required: true
-        },
+    attributes: {
         tagName: {
-        	type: 'string',
-        	size: 20,
-        	defaultsTo: ''
+            type: Sequelize.STRING(40)
         },
-
-        articleTags: {
-            collection: 'ArticleTag',
-            via: 'tag'
-        }
-	}
+    },
+    associations: function() {
+        Tag.hasMany(ArticleTag, { as: 'articleTags' });
+    },
+    options: {
+        freezeTableName: true,
+        classMethods: {},
+        instanceMethods: {},
+        hooks: {}
+    }
 }

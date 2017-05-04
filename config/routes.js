@@ -31,7 +31,17 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
+  'post /testqwe': {
+    controller: 'HomeController',
+    action: 'testqwe',
+    skipAssets: true
+  },
 
+  'post /auth': {
+    controller: 'HomeController',
+    action: 'auth',
+    skipAssets: true
+  },
   
    
   'get /img/:page?': {
@@ -43,7 +53,6 @@ module.exports.routes = {
     action: 'text',
     skipAssets:true
   },
-
   'get /':{
     controller: 'HomeController',
     action: 'index',

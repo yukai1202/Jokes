@@ -1,19 +1,22 @@
 module.exports = {
-	attributes:{
-		ip: {
-        	type: 'string'
+    attributes: {
+        ip: {
+            type: Sequelize.STRING(40)
         },
-
-        voteStatus: {
-        	type: 'integer',
-        	enum: [0,1]
-        },
-
-        article: {
-            model: 'Article'
-        },
-        user: {
-            model: 'User'
+        voteStatus:{
+            type: Sequelize.ENUM,
+            values: ["0", "1"],
+            defaultValue:"1"
         }
-	}
+    },
+    associations: function() {
+        Vote.belongsTo(Article);
+        Vote.belongsTo(User);
+    },
+    options: {
+        freezeTableName: true,
+        classMethods: {},
+        instanceMethods: {},
+        hooks: {}
+    }
 }

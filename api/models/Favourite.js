@@ -1,10 +1,15 @@
 module.exports = {
-	attributes:{
-        article: {
-            model: 'Article'
-        },
-        user: {
-            model: 'User'
-        }
-	}
+    attributes: {
+
+    },
+    associations: function() {
+        Favourite.belongsTo(Article);
+        Favourite.belongsTo(User);
+    },
+    options: {
+        freezeTableName: true,
+        classMethods: {},
+        instanceMethods: {},
+        hooks: {}
+    }
 }

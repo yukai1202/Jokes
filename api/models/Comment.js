@@ -1,44 +1,34 @@
 module.exports = {
-	attributes:{
-        id: {
-            type: 'integer',
-            autoIncrement: true,
-            unique: true,
-            primaryKey: true,
-            required: true
+    attributes: {
+        parentId:{
+            type:Sequelize.INTEGER
         },
-
-        parentId: {
-        	type: 'integer'
+        comment:{
+            type: Sequelize.TEXT
         },
-
-        comment: {
-        	type: 'text'
+        validated:{
+            type: Sequelize.ENUM,
+            values: ["0", "1"],
+            defaultValue:"0"
         },
-
-        validated: {
-            type: 'integer',
-            enum: [0, 1],
-            defaultsTo: 0
+        ip:{
+            type: Sequelize.STRING(2)
         },
-        ip: {
-            type: 'string',
-            size: 20,
-            defaultsTo: ''
-        },
-        source: {
-            type: 'string'
-        },
-
         voteUp: {
-        	type: 'integer'
+            type:Sequelize.INTEGER
         },
-
-        user: {
-        	model: 'User'
-        },
-        article:{
-        	model: 'Article'
+        source:{
+            type:Sequelize.STRING
         }
-	}
+    },
+    associations: function() {
+        Comment.belongsTo(User);
+        Comment.belongsTo(Article);
+    },
+    options: {
+        freezeTableName: true,
+        classMethods: {},
+        instanceMethods: {},
+        hooks: {}
+    }
 }

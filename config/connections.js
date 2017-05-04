@@ -47,13 +47,19 @@ module.exports.connections = {
     password: 'yk8641254', //optional
     database: 'englishjoke' //optional
   },
-
-  localTestServer: {
-    adapter: 'sails-mysql',
-    host: '127.0.0.1',
-    user: 'root', //optional
-    password: 'yk8641254', //optional
-    database: 'sails' //optional
+  localMysqlServer2: {
+    user: 'root',
+    password: 'yk8641254',
+    database: 'testtest',
+    options: {
+      host: 'localhost',
+      dialect: 'mysql',
+      pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+      }
+    }
   },
 
   productionMysqlServer: {
